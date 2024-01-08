@@ -1,8 +1,8 @@
-# configuration
+# Configuration
 
-git config --global user.name "Davinder Singh"
-git config --global user.email "dave626429@gmail.com"
-git config --list
+1. git config --global user.name "Davinder Singh"
+2. git config --global user.email "dave626429@gmail.com"
+3. git config --list
 
 # Setting SSH key pair for authentication
 
