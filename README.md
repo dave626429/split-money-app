@@ -12,14 +12,33 @@ git config --list
 
 [SSH-KEY](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 
-<pre>
 ```GITBASH
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
-</pre>
 
-<code>
-```cmd
-ssh-add ~/.ssh/<custom_name>
+### starting ssh agent
+
+```GITBASH
+eval `ssh-agent -s`
 ```
-</code>
+
+### adding key to ssh agent
+
+```GITBASH
+ssh-add ~/.ssh/<custom_name>
+
+```
+
+### list added key in ssh agent
+
+```GITBASH
+ssh-add -l
+
+```
+
+## cmd/shell
+
+- add the config file in the .ssh folder
+
+  Host github.com
+  IdentityFile ~/.ssh/git_rsa_key
