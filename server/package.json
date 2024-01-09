@@ -16,6 +16,7 @@
   "author": "Davinder Singh",
   "license": "ISC",
   "devDependencies": {
+    "dotenv": "^16.3.1",
     "nodemon": "^3.0.2"
   }
 }
