@@ -40,5 +40,7 @@ ssh-add -l
 
 - add the config file in the .ssh folder
 
-  Host github.com
-  IdentityFile ~/.ssh/git_rsa_key
+<pre>
+Host github.com
+ IdentityFile ~/.ssh/git_rsa_key
+</pre>
