@@ -1,0 +1,2 @@
+- export {default as <name>} from <component_location> => index.js
+  - now import the components from the folder containing index.js
