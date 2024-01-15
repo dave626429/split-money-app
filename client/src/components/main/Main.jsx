@@ -1,12 +1,13 @@
 import React from "react";
 import "./Main.css";
-import Header from "./Header/Header";
+import { Footer, Header, Section } from "../main";
 
 export default function Main() {
   return (
     <div id="main">
       <Header />
       <Section />
+      <Footer />
     </div>
   );
 }

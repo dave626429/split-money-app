@@ -1,5 +1,6 @@
 import React from "react";
+import "./style.css";
 
 export default function Section() {
-  return <div>Section</div>;
+  return <div id="section">Section</div>;
 }

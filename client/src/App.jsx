@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import Navigation from "./components/Navigation/Navigation";
-import Main from "./components/Main/Main";
+import { Main, Navigation } from "./components";
 
 function App() {
   return (
