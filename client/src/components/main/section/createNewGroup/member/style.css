@@ -1,0 +1,7 @@
+.new-members {
+  display: inline-flex;
+  /* border: 2px solid black; */
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+}

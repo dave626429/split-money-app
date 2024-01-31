@@ -1,0 +1,49 @@
+.input-box {
+  display: flex;
+  align-items: center;
+  margin: 0.5em;
+}
+
+.input {
+  height: 2em;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  padding: 0.5em 1em;
+  width: 300px;
+  height: 3em;
+  border: 2px solid #0baeef;
+  z-index: 2;
+  background: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.input:focus ~ .input-label {
+  z-index: 3;
+  transform: translateX(15px) translateY(-19px);
+  margin: 0;
+  font-size: 12px;
+  padding: 0 0.2em;
+  border-radius: 2px;
+}
+
+.input-label {
+  position: absolute;
+  z-index: 1;
+  margin: 0.5em 1em;
+  transition: linear 150ms;
+  background-color: rgb(255, 255, 255);
+}
+
+.shrink-input-label {
+  z-index: 3;
+  transform: translateX(15px) translateY(-19px);
+  margin: 0;
+  font-size: 12px;
+  padding: 0 0.2em;
+  border-radius: 2px;
+}

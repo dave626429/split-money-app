@@ -1,6 +1,20 @@
 #header {
+  display: flex;
   height: 5%;
   background-color: blueviolet;
   position: sticky;
   top: 0;
+}
+
+.header-container {
+  display: flex;
+  flex: 1;
+  /* background-color: red; */
+  align-items: center;
+  justify-content: end;
+}
+
+.header-icon {
+  font-size: large;
+  padding-right: 1em;
 }

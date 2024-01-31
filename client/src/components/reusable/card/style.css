@@ -1,0 +1,49 @@
+.card {
+  display: flex;
+  background-color: blueviolet;
+  padding: 0.5em;
+  flex-direction: column;
+  border-radius: 5px;
+  height: 200px;
+  width: 150px;
+  position: relative;
+}
+
+.card-img {
+  flex: 1;
+  border-radius: 5px 5px 0 0;
+  background-color: rgb(16, 48, 191);
+  /* The image overflows the container due to unspecified size {flex : 1}, retaining its native dimensions */
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 400;
+  background-color: aqua;
+  border-radius: 0 0 5px 5px;
+}
+
+.card-caption {
+  font-size: xx-small;
+}
+
+.option-panel {
+  flex: 1;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.587);
+  width: 5%;
+  top: 0.5em;
+  bottom: 0.5em;
+  right: 0.5em;
+  z-index: 0;
+  border-radius: 0 5px 5px 0;
+  transition: ease-in-out 100ms;
+}
+
+.option-panel:hover {
+  width: 25%;
+}
