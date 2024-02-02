@@ -11,6 +11,7 @@ export default function Member() {
 
   const members = addedMembers?.map((member, index) => (
     <Card
+      id={member.id}
       key={index}
       name={member.name}
       phone={member.phone}

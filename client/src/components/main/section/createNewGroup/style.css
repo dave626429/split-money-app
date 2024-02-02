@@ -1,7 +1,14 @@
+.creat-new-group-container-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
 .creat-new-group-container {
   background-color: rgb(40, 218, 34);
-  padding: 1em;
+  padding: 0.5em;
   display: block;
   flex: 1;
+
   /* border: 2px solid red; */
 }

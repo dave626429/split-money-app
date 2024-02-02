@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import "./style.css";
 import { Close, Edit } from "@mui/icons-material";
 import Input from "../../../../reusable/input/input";
-import { Box } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { memberadded } from "../../../../../store/createNewGroupSlice";
 

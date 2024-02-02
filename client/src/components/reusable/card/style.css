@@ -32,18 +32,46 @@
 }
 
 .option-panel {
-  flex: 1;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.587);
-  width: 5%;
   top: 0.5em;
+  width: 5%;
   bottom: 0.5em;
   right: 0.5em;
   z-index: 0;
   border-radius: 0 5px 5px 0;
   transition: ease-in-out 100ms;
+  display: flex;
 }
 
 .option-panel:hover {
-  width: 25%;
+  cursor: pointer;
+  width: 20%;
+}
+
+.option-panel:hover > .option-panel-icons {
+  display: flex;
+}
+
+.option-panel-icons {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  row-gap: 0.5em;
+}
+
+.option-panel-icon {
+  display: flex;
+  background-color: #ff0000;
+  justify-content: center;
+  border-radius: 2px;
+  transition: all 100ms;
+}
+
+.option-panel-icon:hover {
+  background-color: #ffffff;
+}
+.option-panel-icon:active {
+  color: #3a0eff;
 }
