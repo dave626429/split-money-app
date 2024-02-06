@@ -1,11 +1,13 @@
 import React from "react";
 import "./style.css";
-import { Button } from "../../reusable";
+import { Button, Label } from "../../reusable";
 
 export default function SubHeader({ title, buttons }) {
   return (
     <div className="sub-header">
-      <p className="page-title">{title || "Add Title"}</p>
+      <div className="page-title">
+        <Label value={title} />
+      </div>
       <div className="submit-options">{buttons}</div>
     </div>
   );

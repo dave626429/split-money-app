@@ -7,10 +7,10 @@ const groupSlice = createSlice({
   initialState,
   reducers: {
     getAllGroups: (state, action) => state,
-    groupAdded: (state, action) => {},
+    addGroup: (state, action) => [...state, ...action.payload],
   },
 });
 
-export const { getAllGroups, groupAdded } = groupSlice.actions;
+export const { getAllGroups, addGroup } = groupSlice.actions;
 
 export default groupSlice.reducer;

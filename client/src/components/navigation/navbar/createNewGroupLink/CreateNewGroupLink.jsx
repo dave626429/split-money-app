@@ -1,15 +1,14 @@
 import React from "react";
 import "./style.css";
 import { Diversity2 } from "@mui/icons-material";
-import { NavLink } from "react-router-dom";
+import { NavLink } from "../../../reusable";
 
 export default function CreateNewGroupLink() {
   return (
-    <NavLink className="nav-link" to={"/createnewgroup"}>
-      <div className="nav-link-icon">
-        <Diversity2 />
-      </div>
-      <p className="nav-link-name">Create Group</p>
-    </NavLink>
+    <NavLink
+      icon={<Diversity2 />}
+      label={"Create Group"}
+      to={"/createnewgroup"}
+    />
   );
 }

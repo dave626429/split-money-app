@@ -1,0 +1,27 @@
+.title-input-container {
+  /* display: flex;
+  flex-direction: column;
+  background-color: yellow; */
+  padding: 0.5em 0;
+  /* align-items: center; */
+}
+
+.title-input {
+  width: 100%;
+  max-width: 150px;
+  /* padding: 0.5em; */
+  appearance: none;
+  background: none;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.underline {
+  width: 100%;
+  max-width: 150px;
+  height: 4px;
+  background-color: darkgoldenrod;
+  border-radius: 2px;
+}

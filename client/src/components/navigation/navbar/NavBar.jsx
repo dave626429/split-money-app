@@ -5,6 +5,7 @@ import {
   GroupsLink,
   HistoryLink,
 } from "../navbar";
+import "./style.css";
 
 export default function NavBar() {
   return (
