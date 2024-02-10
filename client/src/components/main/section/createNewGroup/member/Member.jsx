@@ -4,9 +4,9 @@ import { useSelector } from "react-redux";
 import "./style.css";
 import AddMemberIcon from "../addMemberIcon/AddMemberIcon";
 
-export default function Member() {
+function Member() {
   const addedMembers = useSelector((state) => {
-    return state.createNewGroup;
+    return state.createNewGroup.members;
   });
 
   const members = addedMembers?.map((member, index) => (
@@ -19,10 +19,6 @@ export default function Member() {
     />
   ));
 
-  useEffect(() => {
-    console.log(addedMembers);
-  }, [addedMembers]);
-
   return (
     <div className="new-members">
       <AddMemberIcon />
@@ -30,3 +26,4 @@ export default function Member() {
     </div>
   );
 }
+export default React.memo(Member);

@@ -3,7 +3,7 @@ import "./style.css";
 import { Close, Edit } from "@mui/icons-material";
 import Input from "../../../../reusable/input/input";
 import { useDispatch } from "react-redux";
-import { memberadded } from "../../../../../store/createNewGroupSlice";
+import { addMember } from "../../../../../store/createNewGroupSlice";
 
 export default function AddMemberModal({ closeOpenModal }) {
   const imageRef = useRef(null);
@@ -92,7 +92,7 @@ export default function AddMemberModal({ closeOpenModal }) {
           <div
             className="button add-button"
             onClick={() => {
-              dispatch(memberadded(form));
+              dispatch(addMember(form));
               closeOpenModal();
             }}
           >

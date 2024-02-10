@@ -1,10 +1,14 @@
-import React, { useRef, useState } from "react";
+import React, { forwardRef, useEffect, useRef, useState } from "react";
 import "./style.css";
+import { useDispatch } from "react-redux";
+import { setCreateNewGroupName } from "../../../store/createNewGroupSlice";
 
-export default function TitleInput() {
+function TitleInput(props, ref) {
   const inputRef = useRef(null);
   const underlineRef = useRef(null);
-  const [inputValue, setInputValue] = useState("Untitled Group");
+  const [inputValue, setInputValue] = useState("Untitled");
+  const dispatch = useDispatch();
+
   return (
     <div className="title-input-container">
       <input
@@ -15,8 +19,10 @@ export default function TitleInput() {
         value={inputValue}
         onBlur={(e) => {
           if (e.currentTarget.value.trim().length === 0) {
-            console.log(e.currentTarget.value.trim().length);
-            setInputValue("Untitled Group");
+            setInputValue("Untitled");
+          } else {
+            ref.current = { titleInputValue: inputValue };
+            dispatch(setCreateNewGroupName(inputValue));
           }
         }}
         onChange={(e) => {
@@ -31,8 +37,6 @@ export default function TitleInput() {
           inputRef.current.parentElement.removeChild(span);
           const maxWidth = 150;
 
-          // console.log(maxWidth, offsetWidth);
-
           if (maxWidth < offsetWidth) {
             inputRef.current.style.maxWidth = offsetWidth + 6.5 * 2 + "px";
             underlineRef.current.style.maxWidth = offsetWidth + 6 + "px";
@@ -44,7 +48,9 @@ export default function TitleInput() {
           }
         }}
       />
-      <div ref={underlineRef} className="underline"></div>
+      <div ref={underlineRef} className="underline" />
     </div>
   );
 }
+
+export default forwardRef(TitleInput);
