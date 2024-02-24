@@ -3,4 +3,15 @@
   width: 15%;
   height: 100%;
   min-width: 170px;
+  transition: width 300ms, min-width 300ms;
+}
+
+@media screen and (max-width: 425px) {
+  #navigation {
+    width: 0;
+    min-width: 0;
+  }
+  #navigation * {
+    display: none;
+  }
 }

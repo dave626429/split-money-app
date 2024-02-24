@@ -4,3 +4,5 @@ export { default as SubHeader } from "./subHeader/SubHeader";
 export { default as Input } from "./input/Input";
 export { default as Label } from "./label/Label";
 export { default as NavLink } from "./navLink/NavLink";
+export { default as ToolTip } from "./tooltip/ToolTip";
+export { default as Table } from "./table/Table";

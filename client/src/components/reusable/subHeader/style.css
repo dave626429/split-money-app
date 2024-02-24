@@ -1,3 +1,40 @@
 .sub-header {
-  background-color: white;
+  min-height: 50px;
+  background-color: bisque;
+  position: sticky;
+  top: 5%;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.page-title {
+  display: flex;
+  margin: 0 0.5em;
+  font-weight: 500;
+}
+
+.page-title-item {
+  display: flex;
+  align-items: center;
+}
+
+.page-title-icon {
+  cursor: pointer;
+  transition: background-color 0.2s;
+  padding: 0.5em;
+  border-radius: 5px;
+  background-color: rgba(230, 230, 230, 0.79);
+}
+
+.page-title-icon:hover {
+  background-color: rgba(255, 255, 255, 0.804);
+}
+
+.page-title-label {
+  margin-left: 0.5em;
+}
+
+.submit-options {
+  display: flex;
 }

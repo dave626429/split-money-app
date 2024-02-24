@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { groups } from "./testingData";
 
-const initialState = [];
+const initialState = groups || [];
 
 const groupSlice = createSlice({
   name: "groups",
@@ -17,7 +18,7 @@ const groupSlice = createSlice({
 // Groups<something>: related to the requirement after the name
 export const selectGroupsNextId = (state) => {
   // to see the immer proxy object
-  console.log(JSON.parse(JSON.stringify(state)));
+  // console.log(JSON.parse(JSON.stringify(state)));
   const groups = state;
   return groups?.length > 0 ? groups[groups.length - 1].id + 1 : 100001;
 };

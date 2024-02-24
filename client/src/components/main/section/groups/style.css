@@ -1,0 +1,19 @@
+.groups-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.groups-container {
+  background-color: rgb(249, 255, 77);
+  padding: 0.5em;
+  display: block;
+  flex: 1;
+}
+
+.group-container {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  justify-content: center;
+}

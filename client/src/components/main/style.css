@@ -1,0 +1,10 @@
+#main {
+  flex: 1;
+  background-color: red;
+  overflow: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  /* overflow-x: hidden; */
+  display: flex;
+  flex-direction: column;
+}

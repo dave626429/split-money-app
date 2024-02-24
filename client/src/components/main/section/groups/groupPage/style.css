@@ -1,0 +1,12 @@
+.groups-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.group-page-container {
+  flex: 1;
+  background-color: rgb(64, 156, 255);
+  display: flex;
+  padding: 0.5em;
+}
