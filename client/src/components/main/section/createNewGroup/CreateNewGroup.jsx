@@ -42,7 +42,7 @@ export default function CreateNewGroup() {
     <div className="creat-new-group-container-wrapper">
       <SubHeader title="Create Group" buttons={Buttons} />
       <div className="creat-new-group-container">
-        <TitleInput ref={titleInputRef} />
+        <TitleInput ref={titleInputRef} defaultTitle="Add Group Name" />
         <Member />
       </div>
     </div>

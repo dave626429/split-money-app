@@ -4,28 +4,24 @@
   position: absolute;
   top: 0;
   left: 0;
-  min-width: 320px;
   width: 100vw;
   height: 100vh;
   justify-content: center;
   align-items: center;
   background-color: rgba(38, 38, 38, 0.637);
-  /* display: none; */
-  z-index: 1;
+  z-index: 1000;
 }
 
 .add-member-modal {
   background-color: rgb(213, 210, 49);
-  min-width: 50%;
-  /* min-width: 150px; */
-  height: 50%;
+  min-width: 40vw;
   display: flex;
   flex-direction: column;
   border-radius: 2em;
   z-index: 1000;
 }
 
-.modal-header {
+.add-member-modal-header {
   background-color: rgb(32, 223, 73);
   display: flex;
   justify-content: space-between;
@@ -34,7 +30,7 @@
   align-items: center;
 }
 
-.close-icon {
+.add-member-close-icon {
   display: flex;
   align-items: center;
   border-radius: 5px;
@@ -43,53 +39,80 @@
   cursor: pointer;
 }
 
-.close-icon:hover {
+.add-member-close-icon:hover {
   display: flex;
   align-items: center;
   background-color: rgb(255, 93, 93);
 }
 
-.modal-body {
-  background-color: rgb(255, 255, 255);
+.add-member-modal-body {
   display: flex;
   flex-direction: column;
-  min-width: 33%;
-  flex: 1;
-  justify-content: center;
+  width: 100%;
   align-items: center;
+  background-color: white;
 }
 
-.modal-body-img-wrap {
+.add-member-modal-body-upload-img {
+  width: 100%;
   display: flex;
-  margin: 0.5em;
   justify-content: center;
   align-items: center;
 }
 
-.modal-body-img-wrap:hover {
+.add-member-modal-body-img-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5em;
+  width: 130px;
+  height: 130px;
+}
+
+.add-member-modal-body-img-wrap:hover {
   cursor: pointer;
   filter: brightness(0.5);
 }
-.modal-body-img-wrap:hover > .modal-body-img-edit {
-  color: aliceblue;
+
+.add-member-modal-body-img-wrap:hover > .add-member-modal-body-img-edit {
+  color: #0baeef;
 }
 
-.modal-body-img-edit {
+.add-member-modal-body-img-edit {
   position: absolute;
   /* transform: translate(-50%, -50%); */
 }
 
-.modal-body-img {
+.add-member-modal-body-img {
   width: 130px;
   height: 130px;
-  border-radius: 5px;
+  border-radius: 0.5em;
 }
 
-.modal-body-img-file-input {
+.add-member-modal-body-img-file-input {
   display: none;
 }
 
-.modal-footer {
+.add-member-modal-body-input-fields-wrapper {
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0.5em;
+  /* just to get max-width work */
+  width: 100%;
+}
+
+.input-field {
+  width: 100%;
+  background-color: white;
+}
+.input-field:first-child {
+  width: 100%;
+  margin-bottom: 0.5em;
+}
+
+.add-member-modal-footer {
   background-color: aqua;
   display: flex;
   justify-content: end;

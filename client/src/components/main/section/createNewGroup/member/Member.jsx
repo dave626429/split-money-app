@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
-import Card from "../../../../reusable/card/Card";
+import React from "react";
 import { useSelector } from "react-redux";
-import "./style.css";
+import Card from "../../../../reusable/card/Card";
 import AddMemberIcon from "../addMemberIcon/AddMemberIcon";
+import "./style.css";
 
 function Member() {
   const addedMembers = useSelector((state) => {
@@ -26,4 +26,4 @@ function Member() {
     </div>
   );
 }
-export default React.memo(Member);
+export default Member;

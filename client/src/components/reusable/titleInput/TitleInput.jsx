@@ -6,7 +6,9 @@ import { setCreateNewGroupName } from "../../../store/createNewGroupSlice";
 function TitleInput(props, ref) {
   const inputRef = useRef(null);
   const underlineRef = useRef(null);
-  const [inputValue, setInputValue] = useState("Untitled");
+  const [inputValue, setInputValue] = useState(
+    props.defaultTitle || "Untitled"
+  );
   const dispatch = useDispatch();
 
   return (
@@ -19,7 +21,7 @@ function TitleInput(props, ref) {
         value={inputValue}
         onBlur={(e) => {
           if (e.currentTarget.value.trim().length === 0) {
-            setInputValue("Untitled");
+            setInputValue(props.defaultTitle);
           } else {
             ref.current = { titleInputValue: inputValue };
             dispatch(setCreateNewGroupName(inputValue));

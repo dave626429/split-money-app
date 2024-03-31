@@ -7,8 +7,19 @@ const groupSlice = createSlice({
   name: "groups",
   initialState,
   reducers: {
-    getAllGroups: (state, action) => state,
+    getAllGroups: (state) => state,
     addGroup: (state, action) => [...state, action.payload],
+    editMember: (state, action) => {
+      const { groupId, id, name, phone } = action.payload;
+      const groupIndex = state.findIndex(
+        (group) => group.id === parseInt(groupId)
+      );
+      const memberIndex = state[groupIndex].members.findIndex(
+        (member) => member.id === parseInt(id)
+      );
+      state[groupIndex].members[memberIndex].name = name;
+      state[groupIndex].members[memberIndex].phone = phone;
+    },
   },
 });
 
@@ -23,6 +34,9 @@ export const selectGroupsNextId = (state) => {
   return groups?.length > 0 ? groups[groups.length - 1].id + 1 : 100001;
 };
 
-export const { getAllGroups, addGroup } = groupSlice.actions;
+export const getGroupByID = ({ groups }, id) =>
+  groups.filter((group) => group.id === parseInt(id))[0];
+
+export const { getAllGroups, addGroup, editMember } = groupSlice.actions;
 
 export default groupSlice.reducer;

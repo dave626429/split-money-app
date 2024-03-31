@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./style.css";
-import { Add } from "@mui/icons-material";
+import AddIcon from "@mui/icons-material/Add";
 import AddMemberModal from "../addMemberModal/AddMemberModal";
 
 export default function AddMemberIcon() {
@@ -16,7 +16,7 @@ export default function AddMemberIcon() {
           setOpenModal(true);
         }}
       >
-        <Add />
+        <AddIcon />
       </div>
       {openModal && <AddMemberModal closeOpenModal={closeOpenModal} />}
     </>

@@ -8,12 +8,12 @@ export default function Section() {
   return (
     <div id="section">
       <Routes>
-        <Route path="/" element={<Home />} />
         <Route path="/createnewgroup" element={<CreateNewGroup />} />
         <Route path="/contacts" element={<div>Contacts</div>} />
         <Route path="/history" element={<div>History</div>} />
         <Route path="/groups" element={<Groups />} />
         <Route path="/groups/group/:id" element={<GroupPage />} />
+        <Route path="/*" element={<Home />} />
       </Routes>
     </div>
   );

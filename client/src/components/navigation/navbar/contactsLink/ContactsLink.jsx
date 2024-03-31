@@ -1,11 +1,11 @@
 import React from "react";
-import { PermContactCalendarOutlined } from "@mui/icons-material";
+import PermContactCalendarIcon from "@mui/icons-material/PermContactCalendar";
 import { NavLink } from "../../../reusable";
 
 export default function ContactsLink() {
   return (
     <NavLink
-      icon={<PermContactCalendarOutlined />}
+      icon={<PermContactCalendarIcon />}
       label={"Contacts"}
       to={"/contacts"}
     />

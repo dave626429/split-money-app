@@ -28,7 +28,7 @@ const createNewGroupSlice = createSlice({
     },
     removeMember: (state, action) => {
       let id = action.payload;
-      console.log(id);
+
       let { members } = state;
       members = members.filter((member) => member.id != id);
       return { ...state, members };

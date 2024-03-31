@@ -1,14 +1,12 @@
+import Diversity2Icon from "@mui/icons-material/Diversity2";
 import React from "react";
-import "./style.css";
-import { Diversity2 } from "@mui/icons-material";
 import { NavLink } from "../../../reusable";
-import { useDispatch, useSelector } from "react-redux";
-import { setInitialState } from "../../../../store/createNewGroupSlice";
+import "./style.css";
 
 export default function CreateNewGroupLink() {
   return (
     <NavLink
-      icon={<Diversity2 />}
+      icon={<Diversity2Icon />}
       label={"Create Group"}
       to={"/createnewgroup"}
     />

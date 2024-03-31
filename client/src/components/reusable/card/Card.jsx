@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
-import { Delete, AddIcCall } from "@mui/icons-material";
+import AddIcCallIcon from "@mui/icons-material/AddIcCall";
+import DeleteIcon from "@mui/icons-material/Delete";
 import { useDispatch } from "react-redux";
 import { removeMember } from "../../../store/createNewGroupSlice";
 
@@ -13,6 +14,7 @@ export default function Card({ imageUrl, name, phone, id }) {
         <p className="card-title">{name || "Dummy name"}</p>
         <p className="card-caption">{phone || "9999999999"}</p>
       </div>
+      {/* right-side option panel */}
       <div className="option-panel">
         <div className="option-panel-icons">
           <div
@@ -21,13 +23,13 @@ export default function Card({ imageUrl, name, phone, id }) {
               dispatch(removeMember(id));
             }}
           >
-            <Delete />
+            <DeleteIcon />
           </div>
           <div className="card-call-icon option-panel-icon">
-            <AddIcCall />
+            <AddIcCallIcon />
           </div>
           <div className="card-delete-icon option-panel-icon">
-            <Delete />
+            <DeleteIcon />
           </div>
         </div>
       </div>

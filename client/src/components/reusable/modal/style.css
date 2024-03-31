@@ -1,0 +1,101 @@
+.modal-background {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(38, 38, 38, 0.637);
+  z-index: 100;
+}
+
+.modal-container {
+  background-color: yellowgreen;
+  width: 50vw;
+  min-width: 200px;
+
+  /* need to make it auto adustable */
+  min-height: 320px;
+  height: 30vw;
+
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.modal-header,
+.modal-footer {
+  background-color: rgb(43, 226, 55);
+  display: flex;
+  align-items: center;
+  padding: 0.5em;
+  min-height: 43px;
+}
+
+.modal-header {
+  justify-content: space-between;
+}
+
+.modal-close-icon {
+  padding: 0.3em;
+  cursor: pointer;
+  background-color: rgba(231, 22, 22, 0.79);
+  display: flex;
+  align-items: center;
+  border-radius: 0.5em;
+  color: white;
+  font-size: small;
+  stroke-width: 1px;
+  stroke: rgb(255, 255, 255);
+}
+
+.modal-close-icon:hover {
+  background-color: rgba(255, 48, 48, 0.79);
+}
+
+.modal-body {
+  background-color: rgb(72, 154, 255);
+  flex: 1;
+  padding: 0.5em;
+  overflow: scroll;
+  scrollbar-width: none;
+  overflow-x: hidden;
+}
+
+.modal-footer {
+  background-color: blueviolet;
+}
+
+/* group-page-modal */
+.modal-fields {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: antiquewhite;
+  /* gap: 0.5em; */
+  border-radius: 0.5em;
+  padding: 0.5em;
+  padding-top: 0;
+}
+
+.modal-field {
+  flex: 1;
+  min-width: 40%;
+  border-radius: 0.5em;
+  overflow: clip;
+  background-color: inherit;
+}
+/* group-page-modal */
+
+@media (max-width: 680px) {
+  .modal-fields {
+    display: block;
+  }
+  .modal-field {
+    margin-bottom: 0.5em;
+  }
+  .modal-field:last-child {
+    margin: 0;
+  }
+}

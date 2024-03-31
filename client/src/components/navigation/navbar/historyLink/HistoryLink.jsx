@@ -1,7 +1,7 @@
 import React from "react";
-import { Schedule } from "@mui/icons-material";
+import ScheduleIcon from "@mui/icons-material/Schedule";
 import { NavLink } from "../../../reusable";
 
 export default function HistoryLink() {
-  return <NavLink icon={<Schedule />} label={"History"} to={"/history"} />;
+  return <NavLink icon={<ScheduleIcon />} label={"History"} to={"/history"} />;
 }

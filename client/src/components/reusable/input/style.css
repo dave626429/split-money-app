@@ -1,20 +1,31 @@
 .input-box {
   display: flex;
   align-items: center;
-  margin: 0.5em;
+  width: 100%;
+  position: relative;
+  background-color: inherit;
+  padding: 0.5em;
 }
 
 .input {
-  height: 2em;
+  width: 100%;
   border-radius: 5px;
   outline: none;
   border: none;
   padding: 0.5em 1em;
-  width: 300px;
   height: 3em;
-  border: 2px solid #0baeef;
+  border: 2px solid #494949;
   z-index: 2;
   background: none;
+}
+
+input:disabled {
+  color: #8c8c8c;
+  border: 2px solid #bababa;
+}
+
+.input:disabled ~ .input-label {
+  color: #8c8c8c;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -22,28 +33,33 @@ input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
 
+.input:focus {
+  border: 2px solid #0baeef;
+}
+
 .input:focus ~ .input-label {
   z-index: 3;
-  transform: translateX(15px) translateY(-19px);
+  transform: translateX(15px) translateY(-20px);
   margin: 0;
-  font-size: 12px;
+  font-size: 10px;
   padding: 0 0.2em;
   border-radius: 2px;
+  color: #0baeef;
 }
 
 .input-label {
   position: absolute;
   z-index: 1;
   margin: 0.5em 1em;
-  transition: linear 150ms;
-  background-color: rgb(255, 255, 255);
+  transition: all linear 150ms;
+  background-color: inherit;
 }
 
 .shrink-input-label {
   z-index: 3;
-  transform: translateX(15px) translateY(-19px);
+  transform: translateX(15px) translateY(-20px);
   margin: 0;
-  font-size: 12px;
+  font-size: 10px;
   padding: 0 0.2em;
   border-radius: 2px;
 }

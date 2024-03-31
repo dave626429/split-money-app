@@ -1,20 +1,20 @@
-import React, { useState } from "react";
+import React, { forwardRef, useState } from "react";
 import "./style.css";
 
-export default function Input({ id, label, type = "text", onChange }) {
-  const [flag, setFlag] = useState(false);
+function Input({ label, value, className, ...props }, ref) {
+  const [flag, setFlag] = useState(() => (value ? true : false));
   return (
     <div className="input-box">
       <input
-        id={id}
-        type={type}
-        className="input"
+        ref={ref}
+        className={`input ${className}`}
         onBlur={(e) => {
           e.target.value ? setFlag(true) : setFlag(false);
         }}
-        onChange={onChange}
+        defaultValue={value}
+        {...props}
       />
-      {type != "file" && (
+      {props.type != "file" && (
         <p className={`input-label ${flag ? "shrink-input-label" : ""}`}>
           {label}
         </p>
@@ -22,3 +22,5 @@ export default function Input({ id, label, type = "text", onChange }) {
     </div>
   );
 }
+
+export default forwardRef(Input);

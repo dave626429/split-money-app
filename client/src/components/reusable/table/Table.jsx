@@ -1,168 +1,121 @@
+import PropTypes from "prop-types";
 import React from "react";
 import "./style.css";
 
-export default function Table() {
+/**
+ * Table component.
+ * @param {Object} props - The props object.
+ * @param {Array<object>} props.data - table data.
+ * @param {Function} props.onRowClick - function to get the row data
+ * @returns {JSX.Element} The table component.
+ */
+function Table({ data, onRowClick }) {
+  // &#8377; Rupee symbol
+
   return (
     <div className="table-container">
-      <div className="table-header">
-        <p className="table-header-cell cell">S.No</p>
-        <p className="table-header-cell cell">Name</p>
-        <p className="table-header-cell cell">Contribution</p>
-        <p className="table-header-cell cell">Dues</p>
-        <p className="table-header-cell cell">Settled</p>
-      </div>
-      {data.map((row, index) => (
-        <div className="table-row" key={`table-row-${index}`}>
-          <p className="table-row-cell cell">{row["S.No"]}</p>
-          <p className="table-row-cell cell">{row["Name"]}</p>
-          <p className="table-row-cell cell">{row["Contribution"]}</p>
-          <p className="table-row-cell cell">{row["Dues"]}</p>
-          <p className="table-row-cell cell">{row["Settled"]}</p>
+      {/* LARGE SCREEN */}
+      <div className="large-screen">
+        {/* Table Header */}
+        <div className="table-header">
+          {/* blank image space to align with body image column */}
+          <div className="table-header-img" />
+
+          {Object.keys(data[0]).reduce((initialArray, objectKey, index) => {
+            if (objectKey.includes("image")) return initialArray;
+            return [
+              ...initialArray,
+              <p
+                key={`table-header-cell-${index}`}
+                className="table-header-cell cell"
+              >
+                {objectKey}
+              </p>,
+            ];
+          }, [])}
         </div>
-      ))}
+        {/* Table Body holds rows*/}
+        {data.map((row, index) => (
+          <div
+            className="table-row"
+            key={`table-row-${index}`}
+            onClick={() => {
+              onRowClick(row);
+            }}
+          >
+            <img
+              className="table-cell-img"
+              src={
+                row[
+                  Object.keys(row).filter((key) => {
+                    // console.log(key, row, row[key.includes("image")]);
+                    return key.includes("image");
+                  })
+                ]
+              }
+              alt=""
+            />
+
+            {/* Not required but to eliminate a property, we are using this logic*/}
+            {Object.keys(row).reduce((initialArray, objectKey, index) => {
+              if (objectKey.includes("image")) return initialArray;
+              return [
+                ...initialArray,
+                <p
+                  key={`table-row-cell-${index}`}
+                  className="table-row-cell cell"
+                >
+                  {row[objectKey]}
+                </p>,
+              ];
+            }, [])}
+          </div>
+        ))}
+      </div>
+
+      {/* SMALL SCREEN */}
+      <div className="small-screen">
+        {data.map((item, index) => (
+          <div
+            className="table-item"
+            key={`group-page-table-item-${index}`}
+            onClick={() => {
+              onRowClick(item);
+            }}
+          >
+            <img
+              className="table-item-img"
+              src="/profile_imgs/image-1.jpeg"
+              alt=""
+            />
+            <div
+              className="table-item-body"
+              key={`group-page-table-item-body-${index}`}
+            >
+              {Object.keys(item).map((key, index) => (
+                <div
+                  className="group-page-table-item-body-row"
+                  key={`group-page-table-item-body-row-${key}`}
+                >
+                  <div className="table-item-body-label group-page-table-item-body-row-cell">
+                    <p>{key}</p>
+                  </div>
+                  <div className="table-item-body-body-value group-page-table-item-body-row-cell">
+                    <p>{item[key]}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
 
-const data = [
-  {
-    "S.No": 1,
-    Name: "John Marshallmellow Deacosta",
-    Contribution: 100,
-    Dues: 50,
-    Settled: "pending",
-  },
-  {
-    "S.No": 2,
-    Name: "Emily",
-    Contribution: 150,
-    Dues: 0,
-    Settled: "settled",
-  },
-  {
-    "S.No": 3,
-    Name: "Michael",
-    Contribution: 75,
-    Dues: 100,
-    Settled: "pending",
-  },
-  {
-    "S.No": 4,
-    Name: "Sarah",
-    Contribution: 200,
-    Dues: 25,
-    Settled: "pending",
-  },
-  {
-    "S.No": 5,
-    Name: "David",
-    Contribution: 125,
-    Dues: 75,
-    Settled: "pending",
-  },
-  {
-    "S.No": 6,
-    Name: "Olivia",
-    Contribution: 50,
-    Dues: 150,
-    Settled: "pending",
-  },
-  {
-    "S.No": 7,
-    Name: "Daniel",
-    Contribution: 100,
-    Dues: 50,
-    Settled: "pending",
-  },
-  {
-    "S.No": 8,
-    Name: "Emma",
-    Contribution: 75,
-    Dues: 100,
-    Settled: "pending",
-  },
-  {
-    "S.No": 9,
-    Name: "Ethan",
-    Contribution: 150,
-    Dues: 0,
-    Settled: "settled",
-  },
-  {
-    "S.No": 10,
-    Name: "Ava",
-    Contribution: 200,
-    Dues: 25,
-    Settled: "pending",
-  },
-  {
-    "S.No": 11,
-    Name: "Mia",
-    Contribution: 125,
-    Dues: 75,
-    Settled: "pending",
-  },
-  {
-    "S.No": 12,
-    Name: "Jackson",
-    Contribution: 50,
-    Dues: 150,
-    Settled: "pending",
-  },
-  {
-    "S.No": 13,
-    Name: "Sophia",
-    Contribution: 100,
-    Dues: 50,
-    Settled: "pending",
-  },
-  {
-    "S.No": 14,
-    Name: "William",
-    Contribution: 75,
-    Dues: 100,
-    Settled: "pending",
-  },
-  {
-    "S.No": 15,
-    Name: "Oliver",
-    Contribution: 150,
-    Dues: 0,
-    Settled: "settled",
-  },
-  {
-    "S.No": 16,
-    Name: "Chloe",
-    Contribution: 200,
-    Dues: 25,
-    Settled: "pending",
-  },
-  {
-    "S.No": 17,
-    Name: "Daniel",
-    Contribution: 125,
-    Dues: 75,
-    Settled: "pending",
-  },
-  {
-    "S.No": 18,
-    Name: "Sophie",
-    Contribution: 50,
-    Dues: 150,
-    Settled: "pending",
-  },
-  {
-    "S.No": 19,
-    Name: "Lucas",
-    Contribution: 100,
-    Dues: 50,
-    Settled: "pending",
-  },
-  {
-    "S.No": 20,
-    Name: "Amelia",
-    Contribution: 75,
-    Dues: 100,
-    Settled: "pending",
-  },
-];
+Table.propTypes = {
+  data: PropTypes.array,
+  onRowClick: PropTypes.func,
+};
+
+export default Table;

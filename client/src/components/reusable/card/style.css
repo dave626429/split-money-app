@@ -27,10 +27,20 @@
   border-radius: 0 0 5px 5px;
 }
 
+.card-title,
+.card-caption {
+  text-align: center;
+  width: 100%;
+  padding: 0 0.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .card-caption {
   font-size: xx-small;
 }
 
+/* SIDE-OPTION PANEL  */
 .option-panel {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.587);

@@ -2,13 +2,18 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  position: relative;
+  /* position: relative; */
+}
+
+.small-screen {
+  display: none;
 }
 
 .table-header {
-  margin-bottom: 0.25em;
+  margin-bottom: 0.1em;
   background-color: rgb(33, 33, 33);
   color: white;
+  padding: 0.5em;
 }
 
 .table-header,
@@ -20,18 +25,15 @@
 }
 
 .table-row {
-  background-color: rgb(232, 232, 232);
-  transition: background-color 400ms;
+  background-color: rgb(255, 91, 91);
+  transition: background-color 300ms;
   cursor: pointer;
+  padding: 0.5em;
+  margin-bottom: 0.1em;
 }
 
 .table-row:hover {
   background-color: rgb(207, 207, 207);
-}
-
-.table-row:hover .table-row-cell {
-  border-left: 5px solid rgb(168, 168, 168);
-  border-radius: 0.2em;
 }
 
 .cell {
@@ -41,5 +43,76 @@
   text-wrap: nowrap;
   margin-left: 0.5em;
   padding-left: 0.5em;
-  border-left: 5px solid rgba(165, 165, 165, 0);
+}
+
+.table-cell-img,
+.table-header-img {
+  border-radius: 50%;
+  /* position: absolute; */
+  /* transform: translate(-120%, -15%); */
+  width: 30px;
+  height: 30px;
+}
+
+/* Small Screen ==================================== */
+.table-item {
+  margin: 0.5em;
+  padding: 0.5em;
+  border: 2px solid rgb(70, 70, 70);
+  flex: 1;
+}
+.table-item-img {
+  width: 80%;
+  margin: 0.5em 10%;
+  border-radius: 0.4em;
+}
+.table-item-body {
+  /* border: 2px solid rgb(255, 0, 0); */
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5em;
+}
+
+.group-page-table-item-body-row {
+  display: flex;
+  flex: 1;
+  border: 2px solid black;
+  border-bottom: 0px;
+}
+
+.group-page-table-item-body-row:first-child {
+  border-radius: 0.5em 0.5em 0 0;
+}
+
+.group-page-table-item-body-row:last-child {
+  border-radius: 0 0 0.5em 0.5em;
+  border-bottom: 2px solid black;
+}
+
+.group-page-table-item-body-row-cell {
+  flex: 1;
+  width: 50px;
+  padding: 0.5em;
+}
+
+.group-page-table-item-body-row-cell:first-child {
+  border-right: 2px solid black;
+}
+
+.group-page-table-item-body-row-cell p {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 450px) {
+  .large-screen {
+    display: none;
+  }
+  .small-screen {
+    display: block;
+  }
+  .table-container {
+    border: 2px solid rgb(121, 121, 121);
+  }
 }
