@@ -73,6 +73,7 @@ export default function GroupPage() {
           src={modal?.imageUrl}
           alt="member image"
           style={{ width: "130px", height: "130px", borderRadius: "0.5em" }}
+          loading="lazy"
         />
       </div>
       <div className="modal-fields">

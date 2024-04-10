@@ -5,6 +5,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import { Input } from "../../../../reusable";
 import { useDispatch } from "react-redux";
 import { addMember } from "../../../../../store/createNewGroupSlice";
+import axios from "axios";
 
 export default function AddMemberModal({ closeOpenModal }) {
   const imageRef = useRef(null);
@@ -60,6 +61,7 @@ export default function AddMemberModal({ closeOpenModal }) {
                 <EditIcon />
               </div>
               <img
+                loading="lazy"
                 className="add-member-modal-body-img"
                 ref={imageRef}
                 onClick={() => {
@@ -72,15 +74,30 @@ export default function AddMemberModal({ closeOpenModal }) {
                 id="imageUrl"
                 ref={inputRef}
                 type="file"
-                onChange={(e) => {
+                onChange={async (e) => {
                   if (!e.target.files.length) return;
-                  const fileMetaData = e.target.files[0];
-                  const reader = new FileReader();
-                  reader.addEventListener("load", () => {
-                    imageRef.current.src = reader.result;
-                    setForm({ ...form, [e.target.id]: reader.result });
-                  });
-                  reader.readAsDataURL(fileMetaData);
+                  const file = e.target.files[0];
+
+                  // saving images to the server side,
+                  // no need to set enctype="multipart/form-data",
+                  // FormData has it as default enctype="multipart/form-data"
+                  const formData = new FormData();
+                  formData.append("image", file);
+
+                  // serving images from server side logic
+                  const SERVERURL = import.meta.env.VITE_BACKEND_URI;
+
+                  const response = await axios.post(
+                    `${SERVERURL}/uploads`,
+                    formData
+                  );
+
+                  const { fileName } = response.data;
+
+                  const imgServerUrl = `${SERVERURL}/images/${fileName}`;
+
+                  imageRef.current.src = imgServerUrl;
+                  setForm({ ...form, [e.target.id]: imgServerUrl });
                 }}
               />
             </div>

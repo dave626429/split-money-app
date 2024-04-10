@@ -3,5 +3,9 @@
 client/components
 .vscode/launch.json
 tasks
-*/public/profile_imgs
+*/public/*
+*/uploads/*
+*/resizedImages/*
+*/.env
+
 

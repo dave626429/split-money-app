@@ -44,6 +44,7 @@ function Table({ data, onRowClick }) {
             }}
           >
             <img
+              loading="lazy"
               className="table-cell-img"
               src={
                 row[
@@ -87,6 +88,7 @@ function Table({ data, onRowClick }) {
               className="table-item-img"
               src="/profile_imgs/image-1.jpeg"
               alt=""
+              loading="lazy"
             />
             <div
               className="table-item-body"

@@ -9,3 +9,8 @@
   font-style: normal;
   font-size: 14px;
 }
+
+img {
+  overflow: hidden;
+  object-fit: cover;
+}

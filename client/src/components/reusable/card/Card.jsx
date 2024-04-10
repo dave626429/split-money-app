@@ -9,7 +9,11 @@ export default function Card({ imageUrl, name, phone, id }) {
   const dispatch = useDispatch();
   return (
     <div className="card">
-      <img className="card-img" src={imageUrl || "/Artboard 1-100.jpg"} />
+      <img
+        className="card-img"
+        src={imageUrl || "/Artboard 1-100.jpg"}
+        loading="lazy"
+      />
       <div className="card-body">
         <p className="card-title">{name || "Dummy name"}</p>
         <p className="card-caption">{phone || "9999999999"}</p>

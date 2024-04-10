@@ -14,7 +14,12 @@ export default function Group({ data }) {
         navigate(`/groups/group/${id}`);
       }}
     >
-      <img className="group-img" src="group-placeholder.jpg" alt="" />
+      <img
+        className="group-img"
+        src="group-placeholder.jpg"
+        alt=""
+        loading="lazy"
+      />
       <div className="group-body">
         <ToolTip label={data.groupName} />
       </div>

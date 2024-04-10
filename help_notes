@@ -1,2 +1,5 @@
 - export {default as <name>} from <component_location> => index.js
+
   - now import the components from the folder containing index.js
+
+- with sharp -4058 error, need to disable the sharp.cache(false), if not disabled, will put a lock on the file which is being processed.

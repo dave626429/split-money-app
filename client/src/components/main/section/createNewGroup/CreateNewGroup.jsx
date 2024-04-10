@@ -35,7 +35,7 @@ export default function CreateNewGroup() {
   }, []);
 
   const Buttons = [
-    { key: "cngshb-1", label: "Create", onclick: createGroup },
+    { key: "cngshb-1", label: "Create", onClick: createGroup },
   ].map((props) => (newGroup.members.length ? <Button {...props} /> : ""));
 
   return (

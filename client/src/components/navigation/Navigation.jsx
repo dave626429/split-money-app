@@ -1,7 +1,7 @@
 import React from "react";
-import NavBar from "./NavBar/NavBar";
+import NavBar from "./navbar/NavBar";
 import "./style.css";
-import Logo from "./Logo/Logo";
+import Logo from "./logo/Logo";
 
 export default function Navigation() {
   return (
